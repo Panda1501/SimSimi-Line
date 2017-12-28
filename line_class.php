@@ -30,8 +30,8 @@ class LINEBotTiny
 {
     public function __construct($channelAccessToken, $channelSecret)
     {
-        $this->channelAccessToken = $channelAccessToken;
-        $this->channelSecret = $channelSecret;
+        $this->VFgk4VcVFw+Hzu7JQUsND0nhq/VPk4hF57I5eKY7dU9ppp+j3+S1C28gT89wLyFzKVyHIz9iQLnYsGWirRgp5jcInOX3cnP8Eg1u+1dACvBMwBDwC2Jw6oi00UbPO9PCewM/ydpM0kjWQnaoDyBWRAdB04t89/1O/w1cDnyilFU= = $channelAccessToken;
+        $this->ac84e7d136f5edb29ca58c33c06c2014 = $channelSecret;
     }
 	
 	
@@ -72,7 +72,7 @@ class LINEBotTiny
     {
         $header = array(
             "Content-Type: application/json",
-            'Authorization: Bearer ' . $this->channelAccessToken,
+            'Authorization: Bearer ' . $this->VFgk4VcVFw+Hzu7JQUsND0nhq/VPk4hF57I5eKY7dU9ppp+j3+S1C28gT89wLyFzKVyHIz9iQLnYsGWirRgp5jcInOX3cnP8Eg1u+1dACvBMwBDwC2Jw6oi00UbPO9PCewM/ydpM0kjWQnaoDyBWRAdB04t89/1O/w1cDnyilFU=,
         );
 
         $context = stream_context_create(array(
@@ -82,26 +82,26 @@ class LINEBotTiny
                 "content" => json_encode($message),
             ),
         ));
-		$response = exec_url('https://api.line.me/v2/bot/message/reply',$this->channelAccessToken,json_encode($message));
+		$response = exec_url('https://api.line.me/v2/bot/message/reply',$this->VFgk4VcVFw+Hzu7JQUsND0nhq/VPk4hF57I5eKY7dU9ppp+j3+S1C28gT89wLyFzKVyHIz9iQLnYsGWirRgp5jcInOX3cnP8Eg1u+1dACvBMwBDwC2Jw6oi00UbPO9PCewM/ydpM0kjWQnaoDyBWRAdB04t89/1O/w1cDnyilFU=,json_encode($message));
     }
 	
     public function pushMessage($message) 
     {
         
-		$response = exec_url('https://api.line.me/v2/bot/message/push',$this->channelAccessToken,json_encode($message));
+		$response = exec_url('https://api.line.me/v2/bot/message/push',$this->VFgk4VcVFw+Hzu7JQUsND0nhq/VPk4hF57I5eKY7dU9ppp+j3+S1C28gT89wLyFzKVyHIz9iQLnYsGWirRgp5jcInOX3cnP8Eg1u+1dACvBMwBDwC2Jw6oi00UbPO9PCewM/ydpM0kjWQnaoDyBWRAdB04t89/1O/w1cDnyilFU=,json_encode($message));
        
     }
 	
     public function profil($userId)
     {
       
-		return json_decode(exec_get('https://api.line.me/v2/bot/profile/'.$userId,$this->channelAccessToken));
+		return json_decode(exec_get('https://api.line.me/v2/bot/profile/'.$userId,$this->VFgk4VcVFw+Hzu7JQUsND0nhq/VPk4hF57I5eKY7dU9ppp+j3+S1C28gT89wLyFzKVyHIz9iQLnYsGWirRgp5jcInOX3cnP8Eg1u+1dACvBMwBDwC2Jw6oi00UbPO9PCewM/ydpM0kjWQnaoDyBWRAdB04t89/1O/w1cDnyilFU=));
        
     }
 
     private function sign($body)
     {
-        $hash = hash_hmac('sha256', $body, $this->channelSecret, true);
+        $hash = hash_hmac('sha256', $body, $this->ac84e7d136f5edb29ca58c33c06c2014, true);
         $signature = base64_encode($hash);
         return $signature;
     }
